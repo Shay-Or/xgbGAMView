@@ -4,10 +4,10 @@
 > `class xgbGAMView` utilizes the Generalized Additive Model (GAM) technique to establish an interpretable model and offers an easy-to-understand visual presentation of the model's predictive mechanism. The GAM technique combines predictors linearly, while allowing each predictor to have a non-linear relationship with the response variable. This flexibility enables the exploration of complex relationships within datasets, revealing trends and providing local explanations for predictions. `class xgbGAMView` employs decision tree algorithm implemented through "XGBoost", an optimized distributed gradient boosting library, and is designed for flexible modeling of regression, binary classification, and survival analysis tasks. The visual presentation, represented by figures of the features' shape functions, allows for easy examination and comparison of how different features influence the predicted values.
 
 ### Parameters:
-> **param :** *dict, optional (default={})*
-> Dictionary of hyperparameters for the XGBoost model. The following conditions must be met:
-> 'max_depth' should not be in the dictionary. The maximum depth is automatically set to 1.
-> 'objective' must be one of ['reg:squarederror', 'binary:logitraw', 'survival:cox'] if specified.
+> **param :** *dict, optional (default={})*  
+> Dictionary of hyperparameters for the XGBoost model. The following conditions must be met:  
+> 'max_depth' should not be in the dictionary; the maximum depth is automatically set to 1.  
+> 'objective' must be one of ['reg:squarederror', 'binary:logitraw', 'survival:cox'] if specified.  
 >   
 > Note:  
 > While 'survival:cox' in XGBoost returns predictions on hazard ratio scale (i.e., as HR = exp(marginal_prediction) in the proportional hazard function h(t) = h0(t) * HR), `xgbGAMView` returns only the marginal_prediction.
